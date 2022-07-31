@@ -1,0 +1,37 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.giufu.musicplayer">
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+  <application
+      android:name=".App"
+      android:allowBackup="true"
+      android:icon="@drawable/ic_eighth_note_50"
+      android:label="@string/app_name"
+      android:roundIcon="@mipmap/ic_launcher"
+      android:supportsRtl="true"
+      android:theme="@style/AppTheme">
+    <meta-data
+        android:name="com.google.android.glass.TouchEnabledApplication"
+        android:value="true" />
+    <activity android:name="com.giufu.musicplayer.MainActivity"
+        android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+        <category android:name="com.google.android.glass.category.DIRECTORY"/>
+      </intent-filter>
+    </activity>
+    <activity
+        android:name="com.giufu.musicplayer.menu.MenuActivity"
+        android:theme="@style/MenuTheme">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+      </intent-filter>
+    </activity>
+    <service android:name="com.giufu.musicplayer.services.MusicService"/>
+  </application>
+</manifest>
