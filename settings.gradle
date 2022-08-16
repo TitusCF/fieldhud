@@ -1,0 +1,13 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+
+    }
+}
+rootProject.name = "EE2Hud"
+include ':phonecompanion'
+include ':field_hud'
+include ':gesturelibrary'
